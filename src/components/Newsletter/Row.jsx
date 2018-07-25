@@ -1,18 +1,19 @@
 import React from 'react';
-// import Link from 'gatsby-link';
 import PropTypes from 'prop-types';
-// import classnames from 'classnames';
-// import styles from './Row.module.scss';
+import Link from 'gatsby-link';
+import styles from './Row.module.scss';
 
-// FlipMove needs Row to be a class (not a stateless function)
-// eslint-disable-next-line react/prefer-stateless-function
-class Row extends React.Component {
-  render() {
-    const { news } = this.props;
-
-    return <li>news contents</li>;
-  }
-}
+const Row = ({ news }) => (
+  <div className={styles.block}>
+    <div className={styles.date}>{news.date}</div>
+    <div className={styles.newsletter}>
+      <Link className={styles.title} to={{ pathname: news.slug }}>
+        <h3>{news.title}</h3>
+      </Link>
+      {news.excerpt}
+    </div>
+  </div>
+);
 
 Row.propTypes = {
   news: PropTypes.object,

@@ -38,14 +38,14 @@ NewsletterTemplate.defaultProps = {
 };
 
 const Newsletter = ({ data }) => {
-  const { markdownRemark: post } = data;
+  const { markdownRemark: news } = data;
 
   return (
     <NewsletterTemplate
-      content={post.html}
+      content={news.html}
       contentComponent={HTMLContent}
-      helmet={<Helmet title={post.frontmatter.title} />}
-      title={post.frontmatter.title}
+      helmet={<Helmet title={news.frontmatter.title} />}
+      title={news.frontmatter.title}
     />
   );
 };

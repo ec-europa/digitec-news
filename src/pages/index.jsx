@@ -14,6 +14,8 @@ const Newsletters = props => {
     id: newsletter.id,
     slug: newsletter.fields.slug,
     title: newsletter.frontmatter.title,
+    excerpt: newsletter.excerpt,
+    html: newsletter.html,
   }));
 
   return (
@@ -37,13 +39,14 @@ Newsletters.propTypes = {
 };
 
 export const pageQuery = graphql`
-  query ProgrammeQuery {
+  query NewslettersQuery {
     allMarkdownRemark(
       filter: { fileAbsolutePath: { regex: "/newsletters/" } }
     ) {
       edges {
         node {
           id
+          excerpt
           html
           fields {
             slug
