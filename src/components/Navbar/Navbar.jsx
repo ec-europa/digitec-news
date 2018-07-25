@@ -171,7 +171,7 @@ class Navbar extends React.PureComponent {
             </div>
             <ul className={styles.navLinks}>
               <NavbarItem to="/" onClick={this.closeDrawer}>
-                Newsletters
+                Newsletter
               </NavbarItem>
               <NavbarItem to="/past-events" onClick={this.closeDrawer}>
                 Past Events

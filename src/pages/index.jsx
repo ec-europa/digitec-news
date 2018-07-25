@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 
+import Jumbotron from '../components/Jumbotron/Jumbotron';
 import NewsletterList from '../components/Newsletter/List';
 import containerStyles from '../utils/_container.module.scss';
 import contentStyles from '../utils/_content.module.scss';
@@ -20,14 +21,22 @@ const Newsletters = props => {
   }));
 
   return (
-    <section className={containerStyles.container}>
-      <Helmet title="Newsletters" />
-      <div className={containerStyles.header}>
-        <h1 className={contentStyles.fs10}>Newsletters</h1>
-      </div>
+    <Fragment>
+      <Jumbotron
+        title="DIGITEC Newsletter"
+        intro="This is some intro"
+        readMoreLink="/"
+      />
+      <section className={containerStyles.container}>
+        <Helmet title="Newsletters" />
 
-      <NewsletterList news={news} />
-    </section>
+        <div className={containerStyles.header}>
+          <h1 className={contentStyles.fs10}>Newsletter</h1>
+        </div>
+
+        <NewsletterList news={news} />
+      </section>
+    </Fragment>
   );
 };
 
