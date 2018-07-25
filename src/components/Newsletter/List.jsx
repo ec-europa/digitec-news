@@ -2,14 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Row from './Row';
 
-const List = ({ news }) => news.map(newsItem => <Row news={newsItem} />);
+const List = ({ newsletters }) =>
+  newsletters.map(newsletter => (
+    <Row key={newsletter.id} newsletter={newsletter} />
+  ));
 
 List.propTypes = {
-  news: PropTypes.array,
+  newsletters: PropTypes.array,
 };
 
 List.defaultProps = {
-  news: [],
+  newsletters: [],
 };
 
 export default List;

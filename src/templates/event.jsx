@@ -17,7 +17,7 @@ export const NewsletterTemplate = ({
   return (
     <Fragment>
       {helmet || ''}
-      <NewsletterPage news={{ title }}>
+      <NewsletterPage newsletter={{ title }}>
         <PostContent className={contentStyles.content} content={content} />
       </NewsletterPage>
     </Fragment>
@@ -38,14 +38,14 @@ NewsletterTemplate.defaultProps = {
 };
 
 const Newsletter = ({ data }) => {
-  const { markdownRemark: news } = data;
+  const { markdownRemark: newsletter } = data;
 
   return (
     <NewsletterTemplate
-      content={news.html}
+      content={newsletter.html}
       contentComponent={HTMLContent}
-      helmet={<Helmet title={news.frontmatter.title} />}
-      title={news.frontmatter.title}
+      helmet={<Helmet title={newsletter.frontmatter.title} />}
+      title={newsletter.frontmatter.title}
     />
   );
 };

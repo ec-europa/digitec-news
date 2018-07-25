@@ -9,13 +9,14 @@ import contentStyles from '../utils/_content.module.scss';
 
 const Newsletters = props => {
   const { data } = props;
-  const { edges: newsletters } = data.allMarkdownRemark;
+  const { edges } = data.allMarkdownRemark;
 
-  const news = newsletters.map(({ node: newsletter }) => ({
+  const newsletters = edges.map(({ node: newsletter }) => ({
     id: newsletter.id,
     slug: newsletter.fields.slug,
     title: newsletter.frontmatter.title,
     date: newsletter.frontmatter.date,
+    picture: newsletter.frontmatter.picture.childImageSharp,
     excerpt: newsletter.excerpt,
     html: newsletter.html,
   }));
@@ -34,7 +35,7 @@ const Newsletters = props => {
           <h1 className={contentStyles.fs10}>Newsletter</h1>
         </div>
 
-        <NewsletterList news={news} />
+        <NewsletterList newsletters={newsletters} />
       </section>
     </Fragment>
   );
@@ -51,6 +52,7 @@ Newsletters.propTypes = {
 export const pageQuery = graphql`
   query NewslettersQuery {
     allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
       filter: { fileAbsolutePath: { regex: "/newsletters/" } }
     ) {
       edges {
@@ -64,6 +66,13 @@ export const pageQuery = graphql`
           frontmatter {
             title
             date
+            picture {
+              childImageSharp {
+                sizes(maxWidth: 260) {
+                  ...GatsbyImageSharpSizes_withWebp
+                }
+              }
+            }
           }
         }
       }
