@@ -4,20 +4,20 @@ import PropTypes from 'prop-types';
 // Styles
 import styles from './Page.module.scss';
 
-const Page = ({ news, children }) => (
+const Page = ({ event, children }) => (
   <section className={styles.pageContainer}>
-    <h1>{news.title}</h1>
+    <h1>{event.title}</h1>
     {children}
   </section>
 );
 
 Page.propTypes = {
-  news: PropTypes.object,
+  event: PropTypes.object,
   children: PropTypes.func.isRequired,
 };
 
 Page.defaultProps = {
-  news: {},
+  event: {},
 };
 
 export default Page;
