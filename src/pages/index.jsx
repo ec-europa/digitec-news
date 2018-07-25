@@ -14,6 +14,7 @@ const Newsletters = props => {
     id: newsletter.id,
     slug: newsletter.fields.slug,
     title: newsletter.frontmatter.title,
+    date: newsletter.frontmatter.date,
     excerpt: newsletter.excerpt,
     html: newsletter.html,
   }));
@@ -53,6 +54,7 @@ export const pageQuery = graphql`
           }
           frontmatter {
             title
+            date
           }
         }
       }

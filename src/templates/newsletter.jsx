@@ -10,6 +10,7 @@ export const NewsletterTemplate = ({
   content,
   contentComponent,
   title,
+  date,
   helmet,
 }) => {
   const PostContent = contentComponent || Content;
@@ -17,7 +18,7 @@ export const NewsletterTemplate = ({
   return (
     <Fragment>
       {helmet || ''}
-      <NewsletterPage news={{ title }}>
+      <NewsletterPage news={{ title, date }}>
         <PostContent className={contentStyles.content} content={content} />
       </NewsletterPage>
     </Fragment>
@@ -28,12 +29,14 @@ NewsletterTemplate.propTypes = {
   content: PropTypes.string.isRequired,
   contentComponent: PropTypes.func,
   title: PropTypes.string,
+  date: PropTypes.string,
   helmet: PropTypes.object,
 };
 
 NewsletterTemplate.defaultProps = {
   contentComponent: null,
   title: '',
+  date: '',
   helmet: null,
 };
 
@@ -46,6 +49,7 @@ const Newsletter = ({ data }) => {
       contentComponent={HTMLContent}
       helmet={<Helmet title={news.frontmatter.title} />}
       title={news.frontmatter.title}
+      date={news.frontmatter.date}
     />
   );
 };
@@ -63,6 +67,7 @@ export const pageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         title
+        date
       }
       html
     }

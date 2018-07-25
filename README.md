@@ -1,6 +1,6 @@
-# DIGITEC
+# DIGITEC News
 
-Deploys for digitec: https://app.netlify.com/sites/digitec/deploys
+Deploys for digitec: https://app.netlify.com/sites/digitec-news/deploys
 
 ## Getting Started (Recommended)
 
@@ -20,8 +20,6 @@ To test Netlify CMS locally, you'll need run a production build of the site:
 yarn build
 yarn serve
 ```
-
-Open the admin panel: http://localhost:9000/admin/
 
 ### Build a release
 
