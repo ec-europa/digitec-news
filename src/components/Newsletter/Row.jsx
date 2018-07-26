@@ -28,8 +28,8 @@ const Row = ({ newsletter }) => (
     <div className={styles.date}>
       {getMonthName(newsletter.date).toUpperCase()}
     </div>
-    <Link to={{ pathname: newsletter.slug }}>
-      <div className={styles.item}>
+    <Link className={styles.linkBody} to={{ pathname: newsletter.slug }}>
+      <div className={styles.cardBody}>
         {newsletter.picture ? (
           <Img
             sizes={newsletter.picture.sizes}

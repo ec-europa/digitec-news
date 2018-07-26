@@ -13,23 +13,13 @@
   }
 }
 
-.date {
-  padding: 1em 1em 0.5em;
-  color: $ict-grey-text;
-  font-size: 1.5em;
-  font-weight: 300;
-  flex-shrink: 0;
-
-  @include mappy-bp(medium) {
-    text-align: center;
-    min-width: 9em;
-    flex-basis: 9em;
-  }
-}
-
-.item {
+.linkBody {
+  width: 40em;
+  max-width: 40em;
+  margin: 0.7em;
   flex-grow: 1;
   flex-shrink: 0;
+  flex-basis: 40em;
   text-decoration: none;
   border-radius: 2px;
   background-color: lighten($background-grey, 2%);
@@ -54,10 +44,6 @@
   &:focus,
   &:active {
     text-decoration: none;
-
-    &::before {
-      opacity: 1;
-    }
   }
 
   @include mappy-bp(medium) {
@@ -65,8 +51,33 @@
   }
 }
 
+.cardBody {
+  color: $ict-grey-text;
+  display: flex;
+  text-decoration: none;
+  border-radius: 2px;
+  background-color: lighten($background-grey, 2%);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+}
+
 .info {
   padding: 1em;
+}
+
+.title {
+  position: relative;
+  display: block;
+  color: $ict-grey-text;
+  text-decoration: none;
+  font-size: 1.3em;
+  line-height: 1.4;
+  margin-top: 1em;
+
+  .linkBody:hover &,
+  .linkBody:focus &,
+  .linkBody:active & {
+    color: darken($ict-grey-text, 15%);
+  }
 }
 
 .pictureFrame {
@@ -89,9 +100,9 @@
   transition: all 250ms ease-in-out;
   will-change: opacity, transform;
 
-  .item:hover &,
-  .item:focus &,
-  .item:active & {
+  .linkBody:hover &,
+  .linkBody:focus &,
+  .linkBody:active & {
     opacity: 0.9;
     transform: scale(1.1);
   }
