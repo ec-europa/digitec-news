@@ -1,5 +1,6 @@
 const path = require('path');
 const { createFilePath } = require('gatsby-source-filesystem');
+const createNodesRelations = require('./src/utils/createNodesRelations');
 
 exports.createPages = ({ boundActionCreators, graphql }) => {
   const { createPage } = boundActionCreators;
@@ -64,4 +65,10 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
       value,
     });
   }
+};
+
+exports.sourceNodes = ({ boundActionCreators, getNodes, getNode }) => {
+  const { createNodeField } = boundActionCreators;
+
+  createNodesRelations({ getNode, getNodes, createNodeField });
 };

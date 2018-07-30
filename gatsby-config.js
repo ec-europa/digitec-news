@@ -83,4 +83,8 @@ module.exports = {
       resolve: `gatsby-plugin-sitemap`,
     },
   ],
+  mapping: {
+    'MarkdownRemark.fields.news': `MarkdownRemark`,
+    'MarkdownRemark.fields.newsletters': `MarkdownRemark`,
+  },
 };

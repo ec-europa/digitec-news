@@ -60,9 +60,6 @@ export const pageQuery = graphql`
           id
           excerpt
           html
-          fields {
-            slug
-          }
           frontmatter {
             title
             date
@@ -71,6 +68,26 @@ export const pageQuery = graphql`
                 sizes(maxWidth: 260) {
                   ...GatsbyImageSharpSizes_withWebp
                 }
+              }
+            }
+          }
+          fields {
+            slug
+            news {
+              id
+              frontmatter {
+                title
+                picture {
+                  childImageSharp {
+                    sizes(maxWidth: 260) {
+                      ...GatsbyImageSharpSizes_withWebp
+                    }
+                  }
+                }
+                introduction
+              }
+              fields {
+                slug
               }
             }
           }
