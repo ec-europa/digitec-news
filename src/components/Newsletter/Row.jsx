@@ -64,7 +64,7 @@ const Row = ({ newsletter }) => (
                   alt={newsItem.frontmatter.title}
                 />
               ) : (
-                'There are no news related to this newsletter'
+                ''
               )}
               <div className={styles.articleContent}>
                 <h3 className={styles.title}>{newsItem.frontmatter.title}</h3>
