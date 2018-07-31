@@ -3,32 +3,12 @@ import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
 import Img from 'gatsby-image';
 import styles from './Row.module.scss';
-
-const getMonthName = date => {
-  const that = new Date(date);
-  const months = [
-    'January',
-    'Feburary',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December',
-  ];
-  return months[that.getMonth()];
-};
+import formatDate from '../../utils/formatDate';
 
 const Row = ({ newsletter }) => (
   <Fragment>
     <div className={styles.row}>
-      <div className={styles.date}>
-        {getMonthName(newsletter.date).toUpperCase()}
-      </div>
+      <div className={styles.date}>{formatDate(newsletter.date)}</div>
       <article className={styles.article} key={newsletter.title}>
         <Link to={{ pathname: newsletter.slug }} className={styles.link} />
         {newsletter.picture ? (

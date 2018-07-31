@@ -26,8 +26,7 @@ const Newsletters = props => {
     <Fragment>
       <Jumbotron
         title="DIGITEC Newsletter"
-        intro="This is some intro"
-        readMoreLink="/"
+        intro="The Directors-General of DG ITEC and DIGIT introduce the DIGITEC newsletter."
       />
       <section className={containerStyles.container}>
         <Helmet title="Newsletters" />

@@ -9,16 +9,17 @@ import contentStyles from '../utils/_content.module.scss';
 export const NewsTemplate = ({
   content,
   contentComponent,
+  helmet,
   title,
   introduction,
-  helmet,
+  newsletters,
 }) => {
   const PostContent = contentComponent || Content;
 
   return (
     <Fragment>
       {helmet || ''}
-      <NewsPage news={{ title, introduction }}>
+      <NewsPage news={{ title, introduction, newsletters }}>
         <PostContent className={contentStyles.content} content={content} />
       </NewsPage>
     </Fragment>
@@ -28,16 +29,18 @@ export const NewsTemplate = ({
 NewsTemplate.propTypes = {
   content: PropTypes.string.isRequired,
   contentComponent: PropTypes.func,
+  helmet: PropTypes.object,
   title: PropTypes.string,
   introduction: PropTypes.string,
-  helmet: PropTypes.object,
+  newsletters: PropTypes.array,
 };
 
 NewsTemplate.defaultProps = {
   contentComponent: null,
+  helmet: null,
   title: '',
   introduction: '',
-  helmet: null,
+  newsletters: [],
 };
 
 const News = ({ data }) => {
@@ -50,6 +53,7 @@ const News = ({ data }) => {
       helmet={<Helmet title={news.frontmatter.title} />}
       title={news.frontmatter.title}
       introduction={news.frontmatter.introduction}
+      newsletters={news.fields.newsletters}
     />
   );
 };
@@ -68,6 +72,26 @@ export const pageQuery = graphql`
       frontmatter {
         title
         introduction
+      }
+      fields {
+        newsletters {
+          id
+          excerpt
+          frontmatter {
+            title
+            date
+            picture {
+              childImageSharp {
+                sizes(maxWidth: 260) {
+                  ...GatsbyImageSharpSizes_withWebp
+                }
+              }
+            }
+          }
+          fields {
+            slug
+          }
+        }
       }
       html
     }
