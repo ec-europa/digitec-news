@@ -19,6 +19,7 @@ const Newsletters = props => {
     picture: newsletter.frontmatter.picture.childImageSharp,
     excerpt: newsletter.excerpt,
     html: newsletter.html,
+    news: newsletter.fields.news,
   }));
 
   return (
