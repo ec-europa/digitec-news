@@ -12,16 +12,18 @@ const PastEvents = props => {
 
   const events = pastEvents.map(({ node: event }) => ({
     id: event.id,
-    slug: event.fields.slug,
     title: event.frontmatter.title,
-    html: event.html,
+    url: event.frontmatter.url,
+    date: event.frontmatter.date,
+    excerpt: event.excerpt,
+    picture: event.frontmatter.picture.childImageSharp,
   }));
 
   return (
     <section className={containerStyles.container}>
       <Helmet title="PastEvents" />
       <div className={containerStyles.header}>
-        <h1 className={contentStyles.fs10}>PastEvents</h1>
+        <h1 className={contentStyles.fs10}>Past Events</h1>
       </div>
 
       <EventsList events={events} />
@@ -39,16 +41,24 @@ PastEvents.propTypes = {
 
 export const pageQuery = graphql`
   query PastEventsQuery {
-    allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/events/" } }) {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { fileAbsolutePath: { regex: "/events/" } }
+    ) {
       edges {
         node {
-          id
-          html
-          fields {
-            slug
-          }
+          excerpt
           frontmatter {
             title
+            url
+            date
+            picture {
+              childImageSharp {
+                sizes(maxWidth: 260) {
+                  ...GatsbyImageSharpSizes_withWebp
+                }
+              }
+            }
           }
         }
       }
