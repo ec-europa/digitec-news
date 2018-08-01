@@ -21,7 +21,7 @@ const PastEvents = props => {
 
   return (
     <section className={containerStyles.container}>
-      <Helmet title="PastEvents" />
+      <Helmet title="Past Events" />
       <div className={containerStyles.header}>
         <h1 className={contentStyles.fs10}>Past Events</h1>
       </div>
