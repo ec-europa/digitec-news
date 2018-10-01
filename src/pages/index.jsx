@@ -2,7 +2,6 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 
-import Jumbotron from '../components/Jumbotron/Jumbotron';
 import NewsletterList from '../components/Newsletter/List';
 import containerStyles from '../utils/_container.module.scss';
 import contentStyles from '../utils/_content.module.scss';
@@ -24,10 +23,6 @@ const Newsletters = props => {
 
   return (
     <Fragment>
-      <Jumbotron
-        title="DIGITEC Newsletter"
-        intro="The Directors-General of DG ITEC and DIGIT introduce the DIGITEC newsletter."
-      />
       <section className={containerStyles.container}>
         <Helmet title="Newsletters" />
 
