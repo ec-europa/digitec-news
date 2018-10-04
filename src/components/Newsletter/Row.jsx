@@ -27,33 +27,6 @@ const Row = ({ newsletter }) => (
         </div>
       </article>
     </div>
-    {newsletter.news
-      ? newsletter.news.map(newsItem => (
-          <div className={styles.row}>
-            <div className={styles.date} />
-            <article className={styles.article} key={newsItem.id}>
-              <Link
-                to={{ pathname: newsItem.fields.slug }}
-                className={styles.link}
-              />
-              {newsItem.frontmatter.picture ? (
-                <Img
-                  sizes={newsItem.frontmatter.picture.childImageSharp.sizes}
-                  className={styles.picture}
-                  outerWrapperClassName={styles.articleImage}
-                  alt={newsItem.frontmatter.title}
-                />
-              ) : (
-                ''
-              )}
-              <div className={styles.articleContent}>
-                <h3 className={styles.title}>{newsItem.frontmatter.title}</h3>
-                {newsItem.frontmatter.introduction}
-              </div>
-            </article>
-          </div>
-        ))
-      : ''}
   </Fragment>
 );
 

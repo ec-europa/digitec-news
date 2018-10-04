@@ -18,7 +18,6 @@ const Newsletters = props => {
     picture: newsletter.frontmatter.picture.childImageSharp,
     excerpt: newsletter.excerpt,
     html: newsletter.html,
-    news: newsletter.fields.news,
   }));
 
   return (
@@ -68,23 +67,6 @@ export const pageQuery = graphql`
           }
           fields {
             slug
-            news {
-              id
-              frontmatter {
-                title
-                picture {
-                  childImageSharp {
-                    sizes(maxWidth: 260) {
-                      ...GatsbyImageSharpSizes_withWebp
-                    }
-                  }
-                }
-                introduction
-              }
-              fields {
-                slug
-              }
-            }
           }
         }
       }
