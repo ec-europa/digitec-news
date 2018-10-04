@@ -9,7 +9,7 @@ The idea of the EU-FOSSA project appeared following the discovery of a serious v
 
 MEPs from the Group of the Greens/EFA Julia Reda and Max Andersson proposed to solve this problem by helping the open-source projects in need with European Union funding, all for the shared benefit of the citizens, companies and the European Union institutions themselves. They view it as a candidate for a permanent action of the EU with a permanent financing. This action could make a huge difference in everyone's online security.
 
-![Security](/digitec/static/media/eu-fossa-project/1.png)
+![Security](/img/eu-fossa-project-security.png)
 
 A pilot project was carried out during 2015-2016 in DIGIT.B.1 with Everis and KPMG/Trasys. It delivered studies, inventories and two code reviews: one of Apache HTTP Server Core and the second of KeePass. No major issues were found in these mature open source projects. The minor severity issues were quickly fixed.
 
@@ -26,7 +26,7 @@ The continuation of EU-FOSSA was approved by the European Parliament in December
 - choose the companies running these activities in an open call for tender;
 - have more public visibility.
 
-![Security](/digitec/static/media/eu-fossa-project/2.jpg)
+![Security](/img/eu-fossa-project-security2.jpg)
 
 Execution of the core of this project is planned to start around Q2/2018, due to the time necessary for a call for tender preparation, but work will start immediately by conducting proof of concept projects with some existing players in the market in order to better understand the details on how bug bounties should be organised. The team will also perform inventories of open-source software used within the different EU institutions to identify the candidate components requiring security analysis.
 

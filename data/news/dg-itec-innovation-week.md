@@ -7,7 +7,7 @@ picture: /img/dg-itec-innovation-week.jpg
 
 To celebrate its first anniversary, the Innovation department opened its doors to colleagues and visitors at the EP, from 20 to 24 March, through a stand showcasing its projects and promoting an innovation culture inside the EP.
 
-![The Innovation department opened its doors to colleagues and visitors at the EP, from 20 to 24 March](/digitec/static/media/dg-itec-innovation-week/1.jpg)
+![The Innovation department opened its doors to colleagues and visitors at the EP, from 20 to 24 March](/img/dg-itec-innovation-week-1.jpg)
 
 For 5 days, the Innovation team provided information and explanations on their activities and on the tools developed in their Innovation lab, a space used for testing, developing and analysing the latest trends in the technological field. Some of the main projects highlighted included:
 
