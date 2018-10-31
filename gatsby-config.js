@@ -1,7 +1,7 @@
 const config = require('./config.json');
 
 module.exports = {
-  pathPrefix: '/digitec',
+  pathPrefix: '/news',
   siteMetadata: {
     title: config.siteTitle,
     description: config.siteDescription,
