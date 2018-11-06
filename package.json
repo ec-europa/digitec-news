@@ -34,13 +34,12 @@
     "react-overdrive": "0.0.10",
     "uuid": "3.3.2"
   },
-  "keywords": [
-    "gatsby"
-  ],
+  "keywords": ["gatsby"],
   "main": "n/a",
   "scripts": {
     "start": "npm run develop",
     "build": "gatsby build",
+    "build:prefixed": "gatsby build --prefix-paths",
     "develop": "gatsby develop",
     "lint:js": "eslint .",
     "serve": "gatsby serve",
@@ -67,14 +66,7 @@
     "prettier": "1.13.7"
   },
   "lint-staged": {
-    "*.js": [
-      "prettier --parser babylon --write",
-      "eslint",
-      "git add"
-    ],
-    "*.json": [
-      "prettier --parser json --write",
-      "git add"
-    ]
+    "*.js": ["prettier --parser babylon --write", "eslint", "git add"],
+    "*.json": ["prettier --parser json --write", "git add"]
   }
 }
