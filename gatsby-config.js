@@ -14,8 +14,8 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: 'DIGITEC News',
-        short_name: 'DIGITEC',
-        start_url: '/digitec',
+        short_name: 'DIGITEC News',
+        start_url: '/news',
         background_color: '#fcfdfd',
         theme_color: '#009ee2',
         display: 'minimal-ui',
