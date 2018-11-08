@@ -170,12 +170,15 @@ class Navbar extends React.PureComponent {
               </div>
             </div>
             <ul className={styles.navLinks}>
+              {/*
               <NavbarItem to="/" onClick={this.closeDrawer}>
                 Newsletter
               </NavbarItem>
+
               <NavbarItem to="/past-events" onClick={this.closeDrawer}>
                 Past Events
               </NavbarItem>
+              */}
               <NavbarSeparator />
               <NavbarItem
                 to="https://twitter.com/hashtag/digitec18"
