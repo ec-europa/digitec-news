@@ -2,7 +2,7 @@
 templateKey: event
 title: 'DIGITEC 2016: Digital Future'
 picture: /img/DIGITEC_2016.jpg
-url: /2016
+url: /digitec/2016
 date: 2016-11-29T00:00:00+00:00
 ---
 
