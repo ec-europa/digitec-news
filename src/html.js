@@ -53,7 +53,7 @@ module.exports = class HTML extends React.Component {
               {
                   "utility": "piwik",
                   "siteID": 101,
-                  "sitePath": ["europa.eu\/digitec"],
+                  "sitePath": ["europa.eu\/digitec/news"],
                   "instance": "europa.eu"
               }
             `,

@@ -1,7 +1,7 @@
 const config = require('./config.json');
 
 module.exports = {
-  pathPrefix: '/digitec',
+  pathPrefix: '/digitec/news',
   siteMetadata: {
     title: config.siteTitle,
     description: config.siteDescription,
@@ -14,8 +14,8 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: 'DIGITEC News',
-        short_name: 'DIGITEC',
-        start_url: '/digitec',
+        short_name: 'DIGITEC News',
+        start_url: '/digitec/news',
         background_color: '#fcfdfd',
         theme_color: '#009ee2',
         display: 'minimal-ui',
@@ -67,6 +67,11 @@ module.exports = {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
+          // gatsby-remark-relative-images must
+          // go before gatsby-remark-images
+          {
+            resolve: `gatsby-remark-relative-images`,
+          },
           {
             resolve: `gatsby-remark-images`,
             options: {

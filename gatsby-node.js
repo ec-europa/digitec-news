@@ -52,8 +52,15 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
     // Make paths relative
     ['picture', 'image'].forEach(prop => {
       if (node.frontmatter[prop]) {
-        // eslint-disable-next-line no-param-reassign
-        node.frontmatter[prop] = `../../static${node.frontmatter[prop]}`;
+        // News are 1 level upper than other content items.
+        // Because site is prefixed and it's not good to have /news/news/
+        if (node.frontmatter.templateKey === 'news') {
+          // eslint-disable-next-line no-param-reassign
+          node.frontmatter[prop] = `../static${node.frontmatter[prop]}`;
+        } else {
+          // eslint-disable-next-line no-param-reassign
+          node.frontmatter[prop] = `../../static${node.frontmatter[prop]}`;
+        }
       }
     });
 
