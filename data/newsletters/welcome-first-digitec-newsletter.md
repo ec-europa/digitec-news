@@ -12,4 +12,6 @@ news:
   - newsItem: "DG ITEC's Innovation Week at the European Parliament"
 ---
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/cYDGe2-m1Ac" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 The Directorates-General of DG ITEC and DIGIT introduce the first DIGITEC newsletter and the Tech sessions that will happen in October.
