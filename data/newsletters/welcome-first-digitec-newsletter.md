@@ -1,7 +1,7 @@
 ---
 templateKey: newsletter
 title: Welcome to the first DIGITEC Newsletter
-picture: /img/3-digital-for-delegates-2.jpg
+picture: /img/vignetteMay2017.jpg
 date: 2017-05-1T00:00:00+00:00
 news:
   - newsItem: "EU-FOSSA continued: MEPs want bug bounties"
@@ -12,4 +12,4 @@ news:
   - newsItem: "DG ITEC's Innovation Week at the European Parliament"
 ---
 
-The Directors-General of DG ITEC and DIGIT introduce the first DIGITEC newsletter and the Tech sessions that will happen in October.
+The Directorates-General of DG ITEC and DIGIT introduce the first DIGITEC newsletter and the Tech sessions that will happen in October.

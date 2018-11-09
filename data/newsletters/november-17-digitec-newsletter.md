@@ -1,7 +1,7 @@
 ---
 templateKey: newsletter
 title: DIGITEC Newsletter November 2017
-picture: /img/3-digital-for-delegates-2.jpg
+picture: /img/vignetteNovember2017.jpg
 date: 2017-11-1T00:00:00+00:00
 news:
   - newsItem: "DIGITEC Tech Sessions: exchanging IT knowledge in the EU institutions"
