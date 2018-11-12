@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'gatsby-link';
-import Img from 'gatsby-image';
+import { Img } from '../Image';
 import PropTypes from 'prop-types';
 
 // Styles
