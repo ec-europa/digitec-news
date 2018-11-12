@@ -150,31 +150,28 @@ class Navbar extends React.PureComponent {
                 >
                   <img
                     src={euLogo}
-                    alt="DIGITEC 2018"
+                    alt="DIGITEC Newsletter"
                     className={styles.logo}
                   />
                 </a>
                 <Link to="/" className={styles.logoLink}>
                   <img
                     src={digitecLogo}
-                    alt="DIGITEC 2018"
+                    alt="DIGITEC Newsletter"
                     className={styles.logo}
                   />
                 </Link>
               </div>
-              <div className={styles.navigationHeaderTitle}>
-                <h1>20 November, 2018</h1>
-              </div>
-              <div className={styles.navigationHeaderTitle}>
-                <h1>Brussels</h1>
-              </div>
             </div>
             <ul className={styles.navLinks}>
-              {/*
               <NavbarItem to="/" onClick={this.closeDrawer}>
                 Newsletter
               </NavbarItem>
+              <NavbarItem to="/digitec/2018" onClick={this.closeDrawer}>
+                DIGITEC 2018
+              </NavbarItem>
 
+              {/*
               <NavbarItem to="/past-events" onClick={this.closeDrawer}>
                 Past Events
               </NavbarItem>
