@@ -38,6 +38,7 @@
   transition: background-color 300ms ease-in-out;
   flex-wrap: wrap;
   position: relative;
+  width: 100%;
 
   &:active,
   &:focus,
@@ -64,6 +65,7 @@
 }
 
 .articleImage {
+  height: 10rem;
   width: 10rem;
   margin-right: 1em;
 
