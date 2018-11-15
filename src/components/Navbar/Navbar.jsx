@@ -171,11 +171,9 @@ class Navbar extends React.PureComponent {
                 DIGITEC 2018
               </NavbarItem>
 
-              {/*
               <NavbarItem to="/past-events" onClick={this.closeDrawer}>
                 Past Events
               </NavbarItem>
-              */}
               <NavbarSeparator />
               <NavbarItem
                 to="https://twitter.com/hashtag/digitec18"
