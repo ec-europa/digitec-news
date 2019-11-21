@@ -31,6 +31,11 @@ module.exports = class HTML extends React.Component {
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
           />
           {this.props.headComponents}
+          <script
+            src="https://ec.europa.eu/wel/cookie-consent/consent.js"
+            type="text/javascript"
+            defer
+          />
           {css}
         </head>
         <body {...this.props.bodyAttributes}>
