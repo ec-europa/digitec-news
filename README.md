@@ -34,3 +34,24 @@ Build the website with the prefixes:
 ```
 gatsby build --prefix-paths
 ```
+
+### Troubleshooting build on linux (ubuntu)
+
+if you run into this:
+
+```
+error while loading shared libraries: libpng12.so.0: cannot open shared object file: No such file or directory
+```
+
+it's beacuse libpng12 is not available anymore in the ubuntu repos, it has been replaced by libpng16.
+You need to install it separately, then (https://launchpad.net/~ubuntu-security/+archive/ubuntu/ppa/+build/15108504) or, if you are using ubuntu > 19.0, you can use these commands to add a PPA and install with apt:
+
+```
+sudo add-apt-repository ppa:linuxuprising/libpng12
+```
+```
+sudo apt update
+```
+```
+sudo apt install libpng12-0
+```
