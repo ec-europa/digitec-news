@@ -1,8 +1,9 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import Content, { HTMLContent } from '../components/Content';
+import { graphql } from 'gatsby';
 
+import Content, { HTMLContent } from '../components/Content';
 import NewsletterPage from '../components/Newsletter/Page';
 import contentStyles from '../utils/_content.module.scss';
 
@@ -17,12 +18,12 @@ export const NewsletterTemplate = ({
   const PostContent = contentComponent || Content;
 
   return (
-    <Fragment>
+    <>
       {helmet || ''}
       <NewsletterPage news={{ title, date, news }}>
         <PostContent className={contentStyles.content} content={content} />
       </NewsletterPage>
-    </Fragment>
+    </>
   );
 };
 
@@ -66,8 +67,8 @@ Newsletter.propTypes = {
 
 export default Newsletter;
 
-export const pageQuery = graphql`
-  query NewsletterByID($id: String!) {
+export const query = graphql`
+  query($id: String!) {
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         title
@@ -80,8 +81,8 @@ export const pageQuery = graphql`
             title
             picture {
               childImageSharp {
-                sizes(maxWidth: 260) {
-                  ...GatsbyImageSharpSizes_withWebp
+                fluid(maxWidth: 260) {
+                  ...GatsbyImageSharpFluid_withWebp
                 }
               }
             }

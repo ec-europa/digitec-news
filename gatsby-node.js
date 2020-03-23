@@ -2,10 +2,10 @@ const path = require('path');
 const { createFilePath } = require('gatsby-source-filesystem');
 const createNodesRelations = require('./src/utils/createNodesRelations');
 
-exports.createPages = ({ boundActionCreators, graphql }) => {
-  const { createPage } = boundActionCreators;
+exports.createPages = async ({ actions, graphql }) => {
+  const { createPage } = actions;
 
-  return graphql(`
+  const result = await graphql(`
     {
       allMarkdownRemark(limit: 1000) {
         edges {
@@ -21,36 +21,29 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
         }
       }
     }
-  `).then(result => {
-    if (result.errors) {
-      result.errors.forEach(e => console.error(e.toString()));
-      return Promise.reject(result.errors); // eslint-disable-line
-    }
+  `);
 
-    const posts = result.data.allMarkdownRemark.edges;
+  const posts = result.data.allMarkdownRemark.edges;
 
-    return posts.forEach(edge => {
-      const { id } = edge.node;
-      createPage({
-        path: edge.node.fields.slug,
-        component: path.resolve(
-          `src/templates/${String(edge.node.frontmatter.templateKey)}.jsx`
-        ),
-        // additional data can be passed via context
-        context: {
-          id,
-        },
-      });
+  return posts.forEach((edge) => {
+    const { id } = edge.node;
+
+    createPage({
+      path: edge.node.fields.slug,
+      context: { id },
+      component: path.resolve(
+        `src/templates/${String(edge.node.frontmatter.templateKey)}.jsx`
+      ),
     });
   });
 };
 
-exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
-  const { createNodeField } = boundActionCreators;
+exports.onCreateNode = ({ node, actions, getNode }) => {
+  const { createNodeField } = actions;
 
-  if (node.internal.type === `MarkdownRemark`) {
+  if (node.internal.type === 'MarkdownRemark') {
     // Make paths relative
-    ['picture', 'image'].forEach(prop => {
+    ['picture', 'image'].forEach((prop) => {
       if (node.frontmatter[prop]) {
         // News are 1 level upper than other content items.
         // Because site is prefixed and it's not good to have /news/news/
@@ -64,18 +57,16 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
       }
     });
 
-    // Add slug field
-    const value = createFilePath({ node, getNode });
     createNodeField({
-      name: `slug`,
+      name: 'slug',
+      value: createFilePath({ node, getNode }),
       node,
-      value,
     });
   }
 };
 
-exports.sourceNodes = ({ boundActionCreators, getNodes, getNode }) => {
-  const { createNodeField } = boundActionCreators;
+exports.sourceNodes = ({ actions, getNodes, getNode }) => {
+  const { createNodeField } = actions;
 
   createNodesRelations({ getNode, getNodes, createNodeField });
 };

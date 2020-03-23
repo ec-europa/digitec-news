@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Link from 'gatsby-link';
-import { Img } from '../Image';
+import { Link } from 'gatsby';
+import Img from '../Image';
 import styles from '../../utils/_card.module.scss';
 
-const getMonthName = date => {
+const getMonthName = (date) => {
   const that = new Date(date);
   const months = [
     'January',
@@ -26,17 +26,16 @@ const getMonthName = date => {
 const Row = ({ news }) => (
   <div className={styles.card}>
     <div className={styles.date}>{getMonthName(news.date).toUpperCase()}</div>
-    <Link className={styles.linkBody} to={{ pathname: news.slug }}>
+    <Link className={styles.linkBody} to={news.slug}>
       <div className={styles.cardBody}>
-        {news.picture ? (
-          <Img
-            sizes={news.picture.sizes}
-            className={styles.picture}
-            outerWrapperClassName={styles.pictureFrame}
-            alt={news.title}
-          />
-        ) : (
-          ''
+        {news.picture && (
+          <div className={styles.pictureFrame}>
+            <Img
+              fluid={news.picture.fluid}
+              className={styles.picture}
+              alt={news.title}
+            />
+          </div>
         )}
         <div className={styles.info}>
           <h3 className={styles.title}>{news.title}</h3>

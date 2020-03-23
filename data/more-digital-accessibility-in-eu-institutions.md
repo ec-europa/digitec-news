@@ -1,6 +1,6 @@
 ---
 templateKey: news
-title: "More digital accessibility in the EU institutions"
+title: 'More digital accessibility in the EU institutions'
 introduction: Digital accessibility enables all people, including those with disabilities, to access electronic resources (including web pages, software, mobile devices, e-readers, etc.) and communications. In the tech sessions events, colleagues from the Parliament’s DG TRAD presented their efforts to make the web applications used in-house more accessible. So what guidelines and principles should you follow for a universal design for all?
 picture: /img/more-digital-accessibility-in-eu-institutions.jpg
 ---

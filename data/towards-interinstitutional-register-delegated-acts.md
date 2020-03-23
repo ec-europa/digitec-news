@@ -1,6 +1,6 @@
 ---
 templateKey: news
-title: "Towards an Inter-institutional Register of Delegated Acts: a real life example of close collaboration between institutions"
+title: 'Towards an Inter-institutional Register of Delegated Acts: a real life example of close collaboration between institutions'
 introduction: The project aimed at creating an Interinstitutional Register of Delegated Acts is a real life example of close cooperation between institutions, with Commission, Parliament, and Council working together to improve the preparation and adoption of delegated acts. The platform will increase transparency for all stakeholders.
 picture: /img/towards-interinstitutional-register-delegated-acts.jpg
 ---

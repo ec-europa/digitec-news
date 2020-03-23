@@ -1,7 +1,7 @@
 ---
 templateKey: news
-title: "e-Parliament Programme: IT for parliamentary work"
-introduction: "Did you know that ITEC manages over 400 applications? Most of them support the parliament in its core business: drafting legislation. Members churn out over 5000 reports and opinions every year, resulting in more than 200 legislative acts. We had a look behind the scenes to see how IT supports parliamentary work through the e-Parliament Programme."
+title: 'e-Parliament Programme: IT for parliamentary work'
+introduction: 'Did you know that ITEC manages over 400 applications? Most of them support the parliament in its core business: drafting legislation. Members churn out over 5000 reports and opinions every year, resulting in more than 200 legislative acts. We had a look behind the scenes to see how IT supports parliamentary work through the e-Parliament Programme.'
 picture: /img/eparliament-project.jpg
 ---
 

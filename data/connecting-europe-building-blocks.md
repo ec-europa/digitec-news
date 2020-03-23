@@ -1,7 +1,7 @@
 ---
 templateKey: news
-title: "Connecting Europe with Building Blocks"
-introduction: "The Connecting Europe Facility (CEF) programme is funding a set of reusable Digital Service Infrastructures (DSI), known as building blocks. CEF building blocks offer basic capabilities that can be reused in any European project to facilitate the delivery of digital public services. Read more on the five building blocks that are already in place."
+title: 'Connecting Europe with Building Blocks'
+introduction: 'The Connecting Europe Facility (CEF) programme is funding a set of reusable Digital Service Infrastructures (DSI), known as building blocks. CEF building blocks offer basic capabilities that can be reused in any European project to facilitate the delivery of digital public services. Read more on the five building blocks that are already in place.'
 picture: /img/connecting-europe-building-blocks.jpg
 ---
 

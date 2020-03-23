@@ -1,7 +1,7 @@
 ---
 templateKey: news
-title: "DIGITEC Tech Sessions: exchanging IT knowledge in the EU institutions"
-introduction: "Inspired by the success of the DIGITEC 2016 event, the DIGITEC tech sessions took place on 12 and 20 October, in Brussels and Luxembourg respectively. The events were dedicated to technical sessions targeted to IT colleagues. The focus was on IT projects from the European Parliament and the European Commission, their technical development, and implementation."
+title: 'DIGITEC Tech Sessions: exchanging IT knowledge in the EU institutions'
+introduction: 'Inspired by the success of the DIGITEC 2016 event, the DIGITEC tech sessions took place on 12 and 20 October, in Brussels and Luxembourg respectively. The events were dedicated to technical sessions targeted to IT colleagues. The focus was on IT projects from the European Parliament and the European Commission, their technical development, and implementation.'
 picture: /img/digitec-tech-sessions-exchanging-it-knowledge-in-eu-institutions.jpg
 ---
 

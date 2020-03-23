@@ -1,8 +1,9 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import Content, { HTMLContent } from '../components/Content';
+import { graphql } from 'gatsby';
 
+import Content, { HTMLContent } from '../components/Content';
 import NewsPage from '../components/News/Page';
 import contentStyles from '../utils/_content.module.scss';
 
@@ -17,12 +18,12 @@ export const NewsTemplate = ({
   const PostContent = contentComponent || Content;
 
   return (
-    <Fragment>
+    <>
       {helmet || ''}
       <NewsPage news={{ title, introduction, newsletters }}>
         <PostContent className={contentStyles.content} content={content} />
       </NewsPage>
-    </Fragment>
+    </>
   );
 };
 
@@ -66,8 +67,8 @@ News.propTypes = {
 
 export default News;
 
-export const pageQuery = graphql`
-  query NewsByID($id: String!) {
+export const query = graphql`
+  query($id: String!) {
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         title
@@ -82,8 +83,8 @@ export const pageQuery = graphql`
             date
             picture {
               childImageSharp {
-                sizes(maxWidth: 260) {
-                  ...GatsbyImageSharpSizes_withWebp
+                fluid(maxWidth: 260) {
+                  ...GatsbyImageSharpFluid_withWebp
                 }
               }
             }

@@ -1,7 +1,7 @@
 ---
 templateKey: news
-title: "European Commission, the Digital Workplace"
-introduction: "”Provide staff the right IT tools, platforms and services, enabling them to work and collaborate anywhere, anytime with a fit-for-purpose security and optimizing their work experience and productivity”. That is the main aim of the ‘Digital Workplace strategy’, launched by DIGIT in the context of the Synergies and Efficiencies Review. But what does it mean in practice?"
+title: 'European Commission, the Digital Workplace'
+introduction: '”Provide staff the right IT tools, platforms and services, enabling them to work and collaborate anywhere, anytime with a fit-for-purpose security and optimizing their work experience and productivity”. That is the main aim of the ‘Digital Workplace strategy’, launched by DIGIT in the context of the Synergies and Efficiencies Review. But what does it mean in practice?'
 picture: /img/digital-workplace-european-commission.png
 ---
 

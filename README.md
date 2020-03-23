@@ -49,9 +49,11 @@ You need to install it separately, then (https://launchpad.net/~ubuntu-security/
 ```
 sudo add-apt-repository ppa:linuxuprising/libpng12
 ```
+
 ```
 sudo apt update
 ```
+
 ```
 sudo apt install libpng12-0
 ```
