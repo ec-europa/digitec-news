@@ -1,6 +1,6 @@
 # DIGITEC News
 
-Deploys for digitec: https://app.netlify.com/sites/digitec-news/deploys
+Deploys logs: https://app.netlify.com/sites/digitec-news2020/overview
 
 ## Getting Started (Recommended)
 
@@ -26,34 +26,27 @@ yarn serve
 Delete the cache and previous build:
 
 ```
-rm -rf .cache public
+yarn clean
 ```
 
 Build the website with the prefixes:
 
 ```
-gatsby build --prefix-paths
+gatsby build:prefixed
 ```
 
-### Troubleshooting build on linux (ubuntu)
+## Troubleshooting
 
-if you run into this:
+### libpng12
 
 ```
 error while loading shared libraries: libpng12.so.0: cannot open shared object file: No such file or directory
 ```
 
-it's beacuse libpng12 is not available anymore in the ubuntu repos, it has been replaced by libpng16.
-You need to install it separately, then (https://launchpad.net/~ubuntu-security/+archive/ubuntu/ppa/+build/15108504) or, if you are using ubuntu > 19.0, you can use these commands to add a PPA and install with apt:
+This error means that libpng12 is not available at the host machine and it needs to be added manually.For Ubuntu, follow (https://launchpad.net/~ubuntu-security/+archive/ubuntu/ppa/+build/15108504) or add a PPA and install with apt:
 
-```
+```bash
 sudo add-apt-repository ppa:linuxuprising/libpng12
-```
-
-```
 sudo apt update
-```
-
-```
 sudo apt install libpng12-0
 ```
