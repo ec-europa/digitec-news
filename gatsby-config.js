@@ -9,9 +9,9 @@ module.exports = {
     pathPrefix: config.pathPrefix,
   },
   plugins: [
-    `gatsby-plugin-react-next`,
+    'gatsby-plugin-layout',
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: 'gatsby-plugin-manifest',
       options: {
         name: 'DIGITEC News',
         short_name: 'DIGITEC News',
@@ -24,7 +24,7 @@ module.exports = {
     },
     'gatsby-plugin-offline',
     {
-      resolve: `gatsby-plugin-nprogress`,
+      resolve: 'gatsby-plugin-nprogress',
       options: {
         color: '#009ee2',
         showSpinner: true,
@@ -70,10 +70,10 @@ module.exports = {
           // gatsby-remark-relative-images must
           // go before gatsby-remark-images
           {
-            resolve: `gatsby-remark-relative-images`,
+            resolve: 'gatsby-remark-relative-images',
           },
           {
-            resolve: `gatsby-remark-images`,
+            resolve: 'gatsby-remark-images',
             options: {
               // It's important to specify the maxWidth (in pixels) of
               // the content container as this plugin uses this as the
@@ -86,11 +86,11 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-sitemap`,
+      resolve: 'gatsby-plugin-sitemap',
     },
   ],
   mapping: {
-    'MarkdownRemark.fields.news': `MarkdownRemark`,
-    'MarkdownRemark.fields.newsletters': `MarkdownRemark`,
+    'MarkdownRemark.fields.news': 'MarkdownRemark',
+    'MarkdownRemark.fields.newsletters': 'MarkdownRemark',
   },
 };

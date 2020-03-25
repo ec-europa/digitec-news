@@ -1,7 +1,7 @@
 ---
 templateKey: news
-title: "ASTRA: a framework for the evolution and maintenance of IT applications"
-introduction: "Digital accessibility enables all people, including those with disabilities, to access electronic resources (including web pages, software, mobile devices, e-readers, etc.) and communications. In the tech sessions events, colleagues from the Parliament’s DG TRAD presented their efforts to make the web applications used in-house more accessible. So what guidelines and principles should you follow for a universal design for all?"
+title: 'ASTRA: a framework for the evolution and maintenance of IT applications'
+introduction: 'Digital accessibility enables all people, including those with disabilities, to access electronic resources (including web pages, software, mobile devices, e-readers, etc.) and communications. In the tech sessions events, colleagues from the Parliament’s DG TRAD presented their efforts to make the web applications used in-house more accessible. So what guidelines and principles should you follow for a universal design for all?'
 picture: /img/astra-framework-evolution-maintenance-it-applications.png
 ---
 

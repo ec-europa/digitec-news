@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
+import { graphql } from 'gatsby';
 
 import EventsList from '../components/Event/List';
 import containerStyles from '../utils/_container.module.scss';
 import contentStyles from '../utils/_content.module.scss';
 
-const PastEvents = props => {
+const PastEvents = (props) => {
   const { data } = props;
   const { edges: pastEvents } = data.allMarkdownRemark;
 
@@ -39,8 +40,8 @@ PastEvents.propTypes = {
   }).isRequired,
 };
 
-export const pageQuery = graphql`
-  query PastEventsQuery {
+export const query = graphql`
+  {
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { fileAbsolutePath: { regex: "/events/" } }
@@ -54,8 +55,8 @@ export const pageQuery = graphql`
             date
             picture {
               childImageSharp {
-                sizes(maxWidth: 260) {
-                  ...GatsbyImageSharpSizes_withWebp
+                fluid(maxWidth: 260) {
+                  ...GatsbyImageSharpFluid_withWebp
                 }
               }
             }

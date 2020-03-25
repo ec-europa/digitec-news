@@ -1,7 +1,7 @@
 ---
 templateKey: news
-title: "Open PM² Methodology Guide climbing up the charts!"
-introduction: "Open PM² is an initiative by DIGIT that brings the [PM² Methodology](\"http://europa.eu/!Gu76mr\") and its benefits to stakeholders beyond the original target group of European Commission Project Managers - a group which has grown to a community of 653 certified colleagues in the EU agencies, the Council of the EU and the Commission."
+title: 'Open PM² Methodology Guide climbing up the charts!'
+introduction: 'Open PM² is an initiative by DIGIT that brings the [PM² Methodology]("http://europa.eu/!Gu76mr") and its benefits to stakeholders beyond the original target group of European Commission Project Managers - a group which has grown to a community of 653 certified colleagues in the EU agencies, the Council of the EU and the Commission.'
 picture: /img/OpenPM.jpg
 ---
 

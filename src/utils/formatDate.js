@@ -1,4 +1,4 @@
-const formatDate = input => {
+const formatDate = (input) => {
   const date = new Date(input);
 
   const months = [

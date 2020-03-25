@@ -1,7 +1,7 @@
 import React from 'react';
-import Link from 'gatsby-link';
-import Img from '../Image';
+import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
+import Img from '../Image';
 import formatDate from '../../utils/formatDate';
 
 // Styles
@@ -14,22 +14,21 @@ const Page = ({ news, children }) => (
     <p>Published: {formatDate(news.date)}</p>
     {children}
     {news.news
-      ? news.news.map(newsItem => (
+      ? news.news.map((newsItem) => (
           <div className={newsletterRowStyles.row}>
             <article className={newsletterRowStyles.article} key={newsItem.id}>
               <Link
-                to={{ pathname: newsItem.fields.slug }}
+                to={newsItem.fields.slug}
                 className={newsletterRowStyles.link}
               />
-              {newsItem.frontmatter.picture ? (
-                <Img
-                  sizes={newsItem.frontmatter.picture.childImageSharp.sizes}
-                  className={newsletterRowStyles.picture}
-                  outerWrapperClassName={newsletterRowStyles.articleImage}
-                  alt={newsItem.frontmatter.title}
-                />
-              ) : (
-                ''
+              {newsItem.frontmatter.picture && (
+                <div className={newsletterRowStyles.articleImage}>
+                  <Img
+                    fluid={newsItem.frontmatter.picture.childImageSharp.fluid}
+                    className={newsletterRowStyles.picture}
+                    alt={newsItem.frontmatter.title}
+                  />
+                </div>
               )}
               <div className={newsletterRowStyles.articleContent}>
                 <h3 className={newsletterRowStyles.title}>

@@ -1,8 +1,9 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import Content, { HTMLContent } from '../components/Content';
+import { graphql } from 'gatsby';
 
+import Content, { HTMLContent } from '../components/Content';
 import NewsletterPage from '../components/Event/Page';
 import contentStyles from '../utils/_content.module.scss';
 
@@ -15,12 +16,12 @@ export const NewsletterTemplate = ({
   const PostContent = contentComponent || Content;
 
   return (
-    <Fragment>
+    <>
       {helmet || ''}
       <NewsletterPage newsletter={{ title }}>
         <PostContent className={contentStyles.content} content={content} />
       </NewsletterPage>
-    </Fragment>
+    </>
   );
 };
 
@@ -58,8 +59,8 @@ Newsletter.propTypes = {
 
 export default Newsletter;
 
-export const pageQuery = graphql`
-  query PastEventByID($id: String!) {
+export const query = graphql`
+  query($id: String!) {
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         title

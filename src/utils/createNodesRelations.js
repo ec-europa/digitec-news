@@ -13,28 +13,30 @@ module.exports = ({ getNode, getNodes, createNodeField }) => {
 
   const getNewsByTitle = ({ newsItem }) =>
     getNodes().find(
-      node => node.frontmatter && node.frontmatter.title === newsItem
+      (node) => node.frontmatter && node.frontmatter.title === newsItem
     );
 
   getNodes()
-    .filter(node => node.internal.type === 'MarkdownRemark')
-    .forEach(node => {
+    .filter((node) => node.internal.type === 'MarkdownRemark')
+    .forEach((node) => {
       if (node.frontmatter.news) {
         const newsNodes = node.frontmatter.news.map(getNewsByTitle);
 
-        newsNodes.filter(newsItemNode => newsItemNode).forEach(newsItemNode => {
-          if (!(newsItemNode.id in newsNewsletters)) {
-            newsNewsletters[newsItemNode.id] = [];
-          }
+        newsNodes
+          .filter((newsItemNode) => newsItemNode)
+          .forEach((newsItemNode) => {
+            if (!(newsItemNode.id in newsNewsletters)) {
+              newsNewsletters[newsItemNode.id] = [];
+            }
 
-          newsNewsletters[newsItemNode.id].push(node.id);
+            newsNewsletters[newsItemNode.id].push(node.id);
 
-          if (!(node.id in newsletterNews)) {
-            newsletterNews[node.id] = [];
-          }
+            if (!(node.id in newsletterNews)) {
+              newsletterNews[node.id] = [];
+            }
 
-          return newsletterNews[node.id].push(newsItemNode.id);
-        });
+            return newsletterNews[node.id].push(newsItemNode.id);
+          });
       }
     });
 

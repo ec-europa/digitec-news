@@ -1,11 +1,5 @@
-/**
- *
- * Navbar
- *
- */
-
 import React from 'react';
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 
 import styles from './Navbar.module.scss';
@@ -42,8 +36,6 @@ class Navbar extends React.PureComponent {
       offset: 6 * 16,
       tolerance: 5,
       classes: {
-        initial: styles.headroom,
-        pinned: styles.headroomPinned,
         unpinned: styles.headroomUnpinned,
         top: styles.headroomTop,
       },
@@ -61,40 +53,45 @@ class Navbar extends React.PureComponent {
   }
 
   handleFocusChange(event) {
+    const { drawerOpen } = this.state;
+
     if (this.header.contains(document.activeElement)) {
       // Make sure to pin the header when a child is focused
       this.headroom.pin();
 
       // Toggle the drawer if it's closed
-      if (
-        !this.state.drawerOpen &&
-        this.navigation.contains(document.activeElement)
-      ) {
-        this.setState({ drawerOpen: !this.state.drawerOpen });
+      if (!drawerOpen && this.navigation.contains(document.activeElement)) {
+        this.setState({ drawerOpen: !drawerOpen });
         event.preventDefault();
       }
-    } else if (this.state.drawerOpen) {
-      this.setState({ drawerOpen: !this.state.drawerOpen });
+    } else if (drawerOpen) {
+      this.setState({ drawerOpen: !drawerOpen });
       event.preventDefault();
     }
   }
 
   handleKeyDown(event) {
+    const { drawerOpen } = this.state;
+
     // Close drawer on ESC
-    if (this.state.drawerOpen && event.keyCode === 27) {
+    if (drawerOpen && event.keyCode === 27) {
       event.preventDefault();
-      this.setState({ drawerOpen: !this.state.drawerOpen });
+      this.setState({ drawerOpen: !drawerOpen });
     }
   }
 
   handleRequestToggleDrawer(event) {
+    const { drawerOpen } = this.state;
+
     event.preventDefault();
-    this.setState({ drawerOpen: !this.state.drawerOpen });
+    this.setState({ drawerOpen: !drawerOpen });
   }
 
   closeDrawer() {
-    if (this.state.drawerOpen) {
-      this.setState({ drawerOpen: !this.state.drawerOpen });
+    const { drawerOpen } = this.state;
+
+    if (drawerOpen) {
+      this.setState({ drawerOpen: !drawerOpen });
     }
   }
 
@@ -105,7 +102,7 @@ class Navbar extends React.PureComponent {
     return (
       <nav
         className={styles.container}
-        ref={c => {
+        ref={(c) => {
           this.header = c;
         }}
       >
@@ -140,7 +137,7 @@ class Navbar extends React.PureComponent {
           role="button"
           aria-label="Toggle the drawer"
         />
-        <div className={styles.navigation} ref={c => (this.navigation = c)}>
+        <div className={styles.navigation} ref={(c) => (this.navigation = c)}>
           <div className={styles.innerNavbar}>
             <div className={styles.navigationHeader}>
               <div className={styles.logos}>
