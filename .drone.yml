@@ -21,7 +21,7 @@ pipeline:
     commands:
       - yarn install --frozen-lockfile
     when:
-      event: [push, pull_request, tag]
+      event: [push, tag]
 
   test:
     image: node:erbium
@@ -29,7 +29,7 @@ pipeline:
     commands:
       - yarn test
     when:
-      event: [push, pull_request]
+      event: [push]
 
   deploy-preview:
     image: node:erbium
@@ -40,7 +40,7 @@ pipeline:
       - 'yarn netlify deploy --site $${NETLIFY_SITE_ID} --message "Drone build: ${DRONE_BUILD_NUMBER}"'
       - node scripts/set-pr-status.js
     when:
-      event: [push, pull_request]
+      event: [push]
       branch:
         exclude: master 
       status: [success, failure]
